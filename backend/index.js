@@ -54,6 +54,20 @@ app.get('/all', showAll);
 function showAll(req, res, next) {
  connection.query('SELECT * FROM signtransaction', (err,rows) => {
   if(err) throw err;
+  console.log('select all');
+	res.send(rows);  
+});
+}
+
+// Route for sending by address the concordance data
+app.get('/address/:address', showByAddress);
+function showByAddress(req, res, next) {
+var address = String(req.params.address);
+ console.log(address);
+ console.log('select by address');
+
+ connection.query('SELECT * FROM signtransaction WHERE address=?',[address], (err,rows) => {
+  if(err) throw err;
 	res.send(rows);  
 });
 }
