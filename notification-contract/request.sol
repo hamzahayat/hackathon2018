@@ -3,15 +3,15 @@ pragma solidity ^0.4.10;
 contract request {
     
     
-    event sendReq (address reqTo, address reqFrom, uint reqValue);
-    event reciReq (string txHash, address repTo, bool status);
+    event IncomingRequest (address reqFrom, address reqTo, uint reqValue);
+    event RequestAnswered (address reqFrom, address reqTo, string txHash, bool status);
     
-    function sendRequest(address reqTo, address reqFrom, uint reqValue) public {
-         sendReq (reqTo, reqFrom, reqValue);
+    function sendRequest(address reqFrom, address reqTo, uint reqValue) public {
+         IncomingRequest (reqTo, reqFrom, reqValue);
     } 
     
-    function recievedRequest(string txHash, address repTo, bool status) public {
-         reciReq (txHash, repTo, status);
+    function requestAnswered(address reqFrom, address reqTo, string txHash, bool status) public {
+         RequestAnswered (reqFrom, reqTo, txHash, status);
     }
     
 }
