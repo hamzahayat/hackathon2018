@@ -52,7 +52,6 @@ app.get('/all', showAll);
 
 // Callback
 function showAll(req, res, next) {
-
  connection.query('SELECT * FROM signtransaction', (err,rows) => {
   if(err) throw err;
 	res.send(rows);  
