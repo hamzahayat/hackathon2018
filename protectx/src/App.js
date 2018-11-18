@@ -13,11 +13,12 @@ class App extends Component {
     this.change = this.change.bind(this);
   }
 
-  componentDidMount() {
-    window.onload = () => {
-      web3 = window.aionweb3;
-    };
+  componentWillMount() {
+    window.addEventListener("load", () => {
+      web3 = global.aionweb3;
+    });
   }
+
   change(e) {
     const value = e.target.value;
     const input = e.target.name;
@@ -36,7 +37,7 @@ class App extends Component {
     };
 
     const signedTx = await web3.eth.signTransaction(tx);
-    console.log(signedTx);
+    console.log(JSON.stringify(signedTx));
   };
 
   handleCancelChecks = async () => {
