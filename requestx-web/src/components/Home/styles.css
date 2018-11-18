@@ -1,0 +1,407 @@
+.home-grid-container {
+  display: grid;
+  grid-template-areas:
+    'account-badge notification'
+    'balance balance'
+    'balance-wallet balance-wallet'
+    'transactions transactions';
+  grid-template-rows: 15% auto auto auto;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.account-badge {
+  grid-area: account-badge;
+  justify-self: left;
+  align-self: flex-start;
+  margin-top: 5px;
+}
+
+.notification {
+  grid-area: notification;
+  justify-self: right;
+  align-self: flex-start;
+  margin: 20px;
+  margin-top: 25px;
+}
+
+.balance {
+  display: grid;
+  grid-template-areas:
+    'balance-content balance-content'
+    'request request';
+  grid-template-rows: 1fr 0.2fr;
+  grid-template-columns: 1fr 1fr;
+  grid-area: balance;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+
+  justify-self: center;
+  align-self: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.balance-content {
+  grid-area: balance-content;
+  font-family: 'Roboto-Bold';
+  font-size: 60px;
+  color: #757575;
+  justify-self: center;
+  align-self: center;
+}
+.request {
+  grid-area: request;
+  justify-self: center;
+  align-self: flex-start;
+  padding-top: 13px;
+  padding-left: 4px;
+}
+
+.request-btn {
+  background-color: #8bc34a;
+  color: white;
+  width: 300px;
+}
+
+.balance-wallet-container {
+  grid-area: balance-wallet;
+
+  display: grid;
+  grid-template-areas:
+    'balance-content balance-content'
+    'deposit deposit';
+  grid-template-rows: 1fr 0.2fr;
+  grid-template-columns: 1fr 1fr;
+  background-color: white;
+  border-radius: 15px;
+  padding: 30px;
+
+  justify-self: center;
+  align-self: center;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.balance-wallet {
+  grid-area: balance-content;
+  font-family: 'Roboto-Bold';
+  font-size: 60px;
+  color: #757575;
+  justify-self: center;
+  align-self: center;
+}
+
+.deposit {
+  grid-area: deposit;
+  justify-self: center;
+  align-self: flex-start;
+  padding-top: 13px;
+  padding-right: 4px;
+}
+
+.deposit-btn {
+  background-color: #03a9f4;
+  color: white;
+  width: 300px;
+}
+
+.request-receive-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 80px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
+
+.request-receive-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  width: 80%;
+  height: 125px;
+}
+
+.request-container {
+  display: grid;
+  grid-template-areas:
+    '. label'
+    'blockies content'
+    '.  actions';
+  grid-template-rows: 5% 65% 20%;
+  grid-template-columns: 0.1fr 1fr;
+  height: 100%;
+}
+
+.request-blockies {
+  grid-area: blockies;
+  align-self: center;
+  justify-self: center;
+}
+.request-blockies-image {
+  width: 75px !important;
+  height: 75px !important;
+}
+
+.request-label {
+  grid-area: label;
+  align-self: center;
+  justify-self: left;
+  margin-left: 20px;
+}
+.request-content {
+  grid-area: content;
+  align-self: center;
+  justify-self: left;
+  margin-left: 20px;
+}
+
+.request-actions {
+  grid-area: actions;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-areas: 'reject accept';
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0px;
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid lightgray;
+}
+
+.request-reject {
+  grid-area: reject;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #757575;
+}
+
+.request-accept {
+  grid-area: accept;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #757575;
+}
+
+.request-form-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 230px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
+
+.request-form-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  width: 75%;
+  height: 230px;
+}
+
+.request-form-container {
+  display: grid;
+  grid-template-areas:
+    'title title'
+    'blockies request-to'
+    'blockies  request-value'
+    'actions actions';
+  grid-template-rows: 6% auto auto 20%;
+  grid-template-columns: 0.1fr 1fr;
+  height: 100%;
+}
+
+.request-form-title {
+  grid-area: title;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  font-family: 'Roboto-Medium';
+  font-size: 30px;
+  color: #757575;
+}
+
+.request-form-blockies {
+  grid-area: blockies;
+  align-self: flex-end;
+  justify-self: center;
+  padding-bottom: 40px;
+}
+
+.request-form-to {
+  grid-area: request-to;
+  align-self: flex-end;
+  justify-self: left;
+  margin-left: 20px;
+}
+.request-form-value {
+  grid-area: request-value;
+  align-self: center;
+  justify-self: left;
+  margin-left: 20px;
+}
+.request-form-actions {
+  grid-area: actions;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-areas: 'cancel request';
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0px;
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid lightgray;
+}
+
+.request-cancel {
+  grid-area: cancel;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #e64a19;
+}
+
+.request-request {
+  grid-area: request;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #8bc34a;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid #757575;
+  width: 200px;
+  height: 30px;
+  font-family: 'Roboto-Italic';
+  color: #757575;
+  font-size: 17px;
+  outline: none;
+  padding-left: 5px;
+}
+
+.input::placeholder {
+  font-family: 'Roboto-Italic';
+  color: #757575;
+  font-size: 17px;
+}
+
+.primary-btn:active {
+  opacity: 0.2;
+}
+
+.request-accepted-modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 80px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
+}
+
+.request-accepted-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 15px;
+  border: none;
+  border-radius: 20px;
+  width: 80%;
+  height: 150px;
+}
+
+.request-accepted-container {
+  display: grid;
+  grid-template-areas:
+    '. label'
+    'blockies content'
+    'actions  actions';
+  grid-template-rows: 5% 65% 20%;
+  grid-template-columns: 0.1fr 1fr;
+  height: 100%;
+}
+
+.request-blockies {
+  grid-area: blockies;
+  align-self: center;
+  justify-self: center;
+}
+.request-blockies-image {
+  width: 75px !important;
+  height: 75px !important;
+}
+
+.request-label {
+  grid-area: label;
+  align-self: center;
+  justify-self: left;
+  margin-left: 20px;
+}
+.request-content {
+  grid-area: content;
+  align-self: center;
+  justify-self: left;
+  margin-left: 20px;
+}
+
+.request-accepted-actions {
+  grid-area: actions;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-areas: 'okay';
+  grid-template-columns: 1fr;
+  grid-column-gap: 0px;
+  width: 100%;
+  margin-top: 10px;
+  border-top: 1px solid lightgray;
+}
+
+.request-okay {
+  grid-area: okay;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  font-family: 'Roboto-Medium';
+  font-size: 20px;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  color: #757575;
+}

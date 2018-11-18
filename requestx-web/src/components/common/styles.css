@@ -1,0 +1,63 @@
+/* Heading Styles */
+.title {
+  font-size: 1.2em;
+  color: #000;
+  text-transform: uppercase;
+  font-family: 'BurbankBigCondensed-Black', sans-serif;
+}
+
+/* Button Styles */
+.btn-primary {
+  font-size: 1.75em;
+  color: #000;
+  background-color: #ff0;
+  border: none;
+  padding: 0.3em 2em;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  font-family: 'BurbankBigCondensed-Black';
+  cursor: pointer;
+  justify-self: center;
+  align-self: center;
+}
+
+.btn-primary:hover {
+  background-color: #d564d5;
+  color: white;
+}
+
+.btn-secondary {
+  font-size: 1.75em;
+  color: white;
+  background-color: #d564d5;
+  border: none;
+  padding: 0.3em 2em;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+  font-family: 'BurbankBigCondensed-Black';
+  cursor: pointer;
+  justify-self: center;
+  align-self: center;
+}
+
+.btn-secondary:hover {
+  background-color: #ff0;
+  color: #000;
+}
+
+/* Shadow Styling */
+.box-shadow-class {
+  width: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Util Styling */
+.pointer-cursor {
+  cursor: pointer;
+}

@@ -1,0 +1,39 @@
+.primary-btn {
+  background-color: #ffffff;
+  width: 153.58px;
+  height: 45px;
+  border-radius: 10px;
+  border: white;
+  color: #000000;
+  font-size: 17px;
+  border-style: solid;
+  font-family: 'Roboto-Regular';
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.splash-screen-grid-container {
+  display: grid;
+  grid-template-areas:
+    'logo'
+    'create-wallet';
+
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.create-wallet-container {
+  grid-area: create-wallet;
+  justify-self: center;
+  align-self: flex-start;
+}
+
+.logo-container {
+  grid-area: logo;
+  justify-self: center;
+  align-self: flex-end;
+  font-family: 'Roboto-Bold';
+  font-size: 70px;
+  color: #757575;
+}

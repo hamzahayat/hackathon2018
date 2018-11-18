@@ -1,0 +1,36 @@
+.login-grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 15% auto 15%;
+  grid-template-areas:
+    'metamask .   .      .        header '
+    'left-menu   left-menu   main   right-menu   right-menu'
+    'footer footer footer footer footer';
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.login-header {
+  grid-area: header;
+  justify-self: center;
+}
+.login-left-menu {
+  grid-area: left;
+}
+
+.login-main {
+  grid-area: main;
+  justify-self: center;
+  align-self: center;
+}
+
+.login-right-menu {
+  grid-area: right;
+}
+.login-footer {
+  grid-area: footer;
+}
+.login-metamask {
+  grid-area: metamask;
+  justify-self: center;
+}
