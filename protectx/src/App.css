@@ -1,17 +1,48 @@
 .button {
-background-color: #4CAF50; /* Green */
-border: none;
-color: white;
-padding: 15px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-cursor: pointer;
-border-radius: 12px;
-
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
 .button:active {
   background-color: rgb(46, 138, 49);
+}
+
+.home {
+  display: grid;  
+  grid-template-areas: "logo logo"
+                      "labelTo txtTo"
+                      "labelApi txtApi"
+                 "sign cancel";
+  grid-template-rows: auto;               
+
+  grid-gap: 10px;
+  max-width: 500px;
+  margin: 10px;
+}
+.logo{
+  grid-area:logo;
+  height:150px;
+  align-items: center;
+  align-self: center;
+}
+
+.sign {
+  grid-area: sign;
+  align-items: flex-start;
+  align-self: center;
+}
+
+.cancel {
+  grid-area: cancel;
+  align-items: flex-start;
+  align-self: center;
+
 }
