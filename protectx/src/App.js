@@ -6,6 +6,11 @@ let web3;
 class App extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      senderAddress: "",
+      apiKey: ""
+    };
+    this.change = this.change.bind(this);
   }
 
   componentDidMount() {
@@ -13,13 +18,21 @@ class App extends Component {
       web3 = window.aionweb3;
     };
   }
-
+  change(e) {
+    const value = e.target.value;
+    const input = e.target.name;
+    this.setState({
+      [input]: value
+    });
+    e.preventDefault();
+  }
   handleSignTransaction = async () => {
     const tx = {
-      to: "0xa020f60b3f4aba97b0027ca81c5d20c9898d7c43a50359d209596b86e8ce3ca2",
+      to: this.state.senderAddress,
       value: 0,
       data: "",
-      from: web3.eth.accounts[0]
+      from: web3.eth.accounts[0],
+      number: 10
     };
 
     const signedTx = await web3.eth.signTransaction(tx);
@@ -28,7 +41,7 @@ class App extends Component {
 
   handleCancelChecks = async () => {
     const tx = {
-      to: "0xa020f60b3f4aba97b0027ca81c5d20c9898d7c43a50359d209596b86e8ce3ca2",
+      to: this.state.senderAddress,
       value: 0,
       data: "",
       from: web3.eth.accounts[0]
@@ -39,24 +52,35 @@ class App extends Component {
   };
 
   render() {
+    const { senderAddress, apiKey } = this.state;
     return (
       <div className="home">
-        <div className="">
+        <div className="logo">
           <img src={logo} className="logo" alt="logo" />
         </div>
         <div className="labelTo">
           <label>To(Address)</label>
         </div>
         <div className="txtTo">
-          <input type="text" />
+          <input
+            type="text"
+            onChange={this.change}
+            name="senderAddress"
+            value={senderAddress}
+          />
         </div>
         <div className="labelApi">
           <label>Api</label>
         </div>
         <div className="txtApi">
-          <input type="text" />
+          <input
+            type="text"
+            onChange={this.change}
+            name="apiKey"
+            value={apiKey}
+          />
         </div>
-    
+
         <div className="sign">
           <button
             className="button is-primary"
